@@ -14,8 +14,9 @@ type Tab = "markets" | "mybets";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("markets");
+  const [fixtureIndex, setFixtureIndex] = useState(0);
   const [slipState, setSlipState] = useState<{ market: Market; direction: Direction } | null>(null);
-  const fixture = fixtures[0];
+  const fixture = fixtures[fixtureIndex];
 
   const handleSelectMarket = (market: Market, direction: Direction) => {
     setSlipState({ market, direction });
@@ -30,6 +31,23 @@ export default function Home() {
           competition={fixture.competition}
           kickOff={fixture.kickOff}
         />
+        {activeTab === "markets" && (
+          <div className="flex bg-white border-b border-gray-200 overflow-x-auto">
+            {fixtures.map((f, i) => (
+              <button
+                key={f.id}
+                onClick={() => setFixtureIndex(i)}
+                className={`flex-shrink-0 px-m py-2 text-sub whitespace-nowrap ${
+                  i === fixtureIndex
+                    ? "text-teal-600 font-bold border-b-2 border-teal-600"
+                    : "text-gray-400"
+                }`}
+              >
+                {f.homeTeam} v {f.awayTeam}
+              </button>
+            ))}
+          </div>
+        )}
         <div className="flex-1 p-m bg-gray-50">
           {activeTab === "markets" ? (
             <MarketList
