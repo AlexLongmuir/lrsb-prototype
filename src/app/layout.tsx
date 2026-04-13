@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { BetsProvider } from "@/context/BetsContext";
 
 export const metadata: Metadata = {
   title: "LRSB Prototype",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <BetsProvider>{children}</BetsProvider>
+      </body>
     </html>
   );
 }
