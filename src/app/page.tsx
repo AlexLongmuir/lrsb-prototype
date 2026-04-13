@@ -7,15 +7,17 @@ import { Header } from "@/components/layout/Header";
 import { MarketList } from "@/components/market/MarketList";
 import { fixtures } from "@/data/fixtures";
 import { Market, Direction } from "@/lib/types";
+import { BetSlip } from "@/components/betslip/BetSlip";
 
 type Tab = "markets" | "mybets";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("markets");
+  const [slipState, setSlipState] = useState<{ market: Market; direction: Direction } | null>(null);
   const fixture = fixtures[0];
 
   const handleSelectMarket = (market: Market, direction: Direction) => {
-    console.log("Selected:", market.name, direction);
+    setSlipState({ market, direction });
   };
 
   return (
@@ -39,6 +41,13 @@ export default function Home() {
         </div>
         <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
       </div>
+      {slipState && (
+        <BetSlip
+          market={slipState.market}
+          initialDirection={slipState.direction}
+          onClose={() => setSlipState(null)}
+        />
+      )}
     </DeviceFrame>
   );
 }
