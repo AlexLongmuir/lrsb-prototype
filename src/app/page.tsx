@@ -8,6 +8,7 @@ import { MarketList } from "@/components/market/MarketList";
 import { fixtures } from "@/data/fixtures";
 import { Market, Direction } from "@/lib/types";
 import { BetSlip } from "@/components/betslip/BetSlip";
+import { OpenPositions } from "@/components/mybets/OpenPositions";
 
 type Tab = "markets" | "mybets";
 
@@ -36,7 +37,7 @@ export default function Home() {
               onSelectMarket={handleSelectMarket}
             />
           ) : (
-            <p className="text-body text-gray-400">My Bets will go here</p>
+            <OpenPositions onGoToMarkets={() => setActiveTab("markets")} />
           )}
         </div>
         <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
