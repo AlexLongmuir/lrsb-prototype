@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Market, Direction } from "@/lib/types";
 import { DirectionToggle } from "./DirectionToggle";
+import { StakeInput } from "./StakeInput";
 import { useBets } from "@/context/BetsContext";
 
 type BetSlipProps = {
@@ -88,12 +89,9 @@ export function BetSlip({ market, initialDirection, onClose }: BetSlipProps) {
               <p className="text-sub text-gray-500">{direction === "buy" ? "Buy" : "Sell"} price</p>
               <p className="text-[28px] font-bold text-gray-900">{price.toFixed(1)}</p>
             </div>
-            {/* Stake input placeholder — Task 8 will replace this */}
             <div className="mb-m">
               <p className="text-sub text-gray-500 mb-xs">Stake</p>
-              <div className="text-center text-[28px] font-bold text-gray-900 py-2 border-b-2 border-teal-600">
-                {stake > 0 ? `£${stake.toFixed(2)}` : "£0.00"}
-              </div>
+              <StakeInput stake={stake} onStakeChange={setStake} />
             </div>
             {/* Payout graph placeholder — Task 9 will replace this */}
             <div className="mb-m h-[200px] bg-gray-50 rounded-md flex items-center justify-center">
