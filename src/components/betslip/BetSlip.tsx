@@ -5,6 +5,8 @@ import { Market, Direction } from "@/lib/types";
 import { DirectionToggle } from "./DirectionToggle";
 import { StakeInput } from "./StakeInput";
 import { useBets } from "@/context/BetsContext";
+import { PayoutGraph } from "./PayoutGraph";
+import { PayoutText } from "./PayoutText";
 
 type BetSlipProps = {
   market: Market;
@@ -93,9 +95,11 @@ export function BetSlip({ market, initialDirection, onClose }: BetSlipProps) {
               <p className="text-sub text-gray-500 mb-xs">Stake</p>
               <StakeInput stake={stake} onStakeChange={setStake} />
             </div>
-            {/* Payout graph placeholder — Task 9 will replace this */}
-            <div className="mb-m h-[200px] bg-gray-50 rounded-md flex items-center justify-center">
-              <p className="text-sub text-gray-400">Payout graph</p>
+            <div className="mb-s">
+              <PayoutGraph market={market} direction={direction} stake={stake} />
+            </div>
+            <div className="mb-m">
+              <PayoutText market={market} direction={direction} stake={stake} />
             </div>
             <button
               onClick={handlePlaceBet}
