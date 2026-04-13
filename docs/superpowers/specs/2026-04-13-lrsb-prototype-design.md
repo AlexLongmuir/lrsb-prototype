@@ -134,13 +134,13 @@ Components top to bottom:
 
 ### Colours
 
-**Primary teal scale:**
-- Teal 100: lightest (backgrounds)
-- Teal 300: light (hover states, borders)
-- Teal 500: mid (secondary actions)
-- Teal 600: primary (buttons, links)
-- Teal 700: dark (active states)
-- Teal 900: darkest (hover on primary buttons)
+**Primary teal scale** (derived from Teal 600: #168D99):
+- Teal 100: #E6F4F6 (backgrounds)
+- Teal 300: #6DC2CC (hover states, borders)
+- Teal 500: #1FA3B0 (secondary actions)
+- Teal 600: #168D99 (primary buttons, links)
+- Teal 700: #127780 (active states)
+- Teal 900: #0A5059 (hover on primary buttons)
 
 **Status:** Success #39C172, Danger #BD2A2E, Warning #FCCE2B
 
