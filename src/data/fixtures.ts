@@ -6,7 +6,7 @@ export const fixtures: Fixture[] = [
     homeTeam: "Arsenal",
     awayTeam: "Chelsea",
     competition: "Premier League",
-    kickOff: "2026-04-18T15:00:00Z",
+    kickOff: "Sat 15:00",
     markets: [
       {
         id: "ars-che-goals",
@@ -71,7 +71,7 @@ export const fixtures: Fixture[] = [
     homeTeam: "Liverpool",
     awayTeam: "Man City",
     competition: "Premier League",
-    kickOff: "2026-04-18T17:30:00Z",
+    kickOff: "Sat 17:30",
     markets: [
       {
         id: "liv-mci-goals",
@@ -136,7 +136,7 @@ export const fixtures: Fixture[] = [
     homeTeam: "Tottenham",
     awayTeam: "Newcastle",
     competition: "Premier League",
-    kickOff: "2026-04-19T14:00:00Z",
+    kickOff: "Sun 14:00",
     markets: [
       {
         id: "tot-new-goals",
