@@ -71,7 +71,7 @@ export function BetSlip({ market, initialDirection, onClose }: BetSlipProps) {
           </div>
           <div className="p-m">
             <div className="mb-m">
-              <span className="bg-teal-100 text-teal-700 text-sub px-3 py-1 rounded-pill">
+              <span className="bg-red-50 text-primary-red text-sub px-3 py-1 rounded-pill">
                 Limited Risk
               </span>
             </div>
@@ -104,7 +104,7 @@ export function BetSlip({ market, initialDirection, onClose }: BetSlipProps) {
             <button
               onClick={handlePlaceBet}
               disabled={stake <= 0}
-              className="w-full bg-teal-600 text-white text-sub font-bold py-3 rounded-md hover:bg-teal-900 disabled:bg-gray-400 transition-colors"
+              className="w-full bg-primary-red text-white text-sub font-bold py-3 rounded-md hover:bg-red-700 disabled:bg-gray-400 transition-colors"
             >
               Place Bet
             </button>
