@@ -19,16 +19,17 @@ type CategoryTabsProps = {
 export function CategoryTabs({ activeCategory, onCategoryChange }: CategoryTabsProps) {
   return (
     <div className="bg-surface border-b border-border overflow-x-auto">
-      <div className="flex">
+      <div className="flex" style={{ gap: 0 }}>
         {CATEGORIES.map((cat) => (
           <button
             key={cat.id}
             onClick={() => onCategoryChange(cat.id)}
-            className={`flex-shrink-0 px-m py-2.5 text-sub whitespace-nowrap border-b-2 transition-colors ${
+            className={`flex-shrink-0 whitespace-nowrap border-b-2 transition-colors ${
               activeCategory === cat.id
                 ? "text-primary-red font-bold border-primary-red"
                 : "text-text-secondary border-transparent"
             }`}
+            style={{ padding: "10px 14px", fontSize: "13px" }}
           >
             {cat.label}
           </button>
