@@ -16,13 +16,20 @@ export type Market = {
   step: number;
 };
 
+export type MarketGroup = {
+  id: string;
+  name: string;
+  category: string;
+  markets: Market[];
+};
+
 export type Fixture = {
   id: string;
   homeTeam: string;
   awayTeam: string;
   competition: string;
   kickOff: string;
-  markets: Market[];
+  marketGroups: MarketGroup[];
 };
 
 export type PlacedBet = {
